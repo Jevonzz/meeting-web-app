@@ -23,9 +23,6 @@ const Navbar = () => {
         <SignedIn>
           <UserButton />
         </SignedIn>
-        <SignedOut>
-          
-        </SignedOut>
         <MobileNav />
       </div>
     </nav>
