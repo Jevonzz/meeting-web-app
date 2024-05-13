@@ -15,6 +15,7 @@ const Home = () => {
   }).format(now);
   const { upcomingCalls } = useGetCalls();
   const call = upcomingCalls;
+  console.log("🚀 ~ Home ~ call:", call[0]);
 
   return (
     <section className="flex size-full flex-col gap-10 text-white">
@@ -22,10 +23,7 @@ const Home = () => {
         <div className="flex h-full flex-col justify-between max-md:px-5 max-md:py-8 lg:p-11 md:p-5">
           {call.length > 0 ? (
             <h2 className="glassmorphism max-w-[400px] rounded py-2 text-center text-base font-normal whitespace-nowrap">
-              Upcoming Meeting:{" "}
-              {call.map((meeting: Call) =>
-                meeting.state?.startsAt?.toLocaleString()
-              )}
+              Upcoming Meeting: {call[0].state?.startsAt?.toLocaleString()}
             </h2>
           ) : (
             <h2 className="glassmorphism max-w-[270px] rounded py-2 text-center text-base font-normal">
